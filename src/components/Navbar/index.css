@@ -66,4 +66,6 @@ li {
   background-color: transparent;
   padding-left: 15px;
   padding-right: 15px;
+  cursor: pointer;
+  outline: none;
 }

@@ -7,7 +7,7 @@ const Navbar = () => (
     <h1 className="title">movieDB</h1>
 
     <div className="search-container">
-      <input type="search" className="input" placeholder="search" />
+      <input type="search" className="input" placeholder="Search" />
       <button type="button" className="search-button">
         <AiOutlineSearch size={25} />
       </button>
