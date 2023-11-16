@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 
 import {Component} from 'react'
 import Reference from '../ReferencePage'
+import Navbar from '../Navbar'
 
 class Popular extends Component {
   state = {movieDetails: '', isLoading: false}
@@ -75,12 +76,15 @@ class Popular extends Component {
     const {movieDetails} = this.state
     console.log('movie details*****', movieDetails)
     return (
-      <div className="popular-container">
-        <div className="width-container">
-          <p className="popular-heading">Popular Movies</p>
-          <ul className="movies-container">{this.renderResult()}</ul>
+      <>
+        <Navbar />
+        <div className="popular-container">
+          <div className="width-container">
+            <h1 className="popular-heading">Popular</h1>
+            <ul className="movies-container">{this.renderResult()}</ul>
+          </div>
         </div>
-      </div>
+      </>
     )
   }
 }

@@ -1,0 +1,8 @@
+.search-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.search-home-container {
+}

@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 
 import {Component} from 'react'
 import Reference from '../ReferencePage'
+import Navbar from '../Navbar'
 
 class TopRated extends Component {
   state = {movieDetails: '', isLoading: false}
@@ -50,7 +51,6 @@ class TopRated extends Component {
   }
 
   renderPopularDetails = det => {
-    console.log('render popular detials fucntion////////*******', det)
     if (det !== '') {
       return det.map(each => <Reference key={each.id} movie={each} />)
     }
@@ -75,12 +75,15 @@ class TopRated extends Component {
     const {movieDetails} = this.state
     console.log('movie details*****', movieDetails)
     return (
-      <div className="popular-container">
-        <div className="width-container">
-          <p className="popular-heading">Upcoming Movies</p>
-          <ul className="movies-container">{this.renderResult()}</ul>
+      <>
+        <Navbar />
+        <div className="popular-container">
+          <div className="width-container">
+            <h1 className="popular-heading">Upcoming</h1>
+            <ul className="movies-container">{this.renderResult()}</ul>
+          </div>
         </div>
-      </div>
+      </>
     )
   }
 }

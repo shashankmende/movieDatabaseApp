@@ -1,8 +1,9 @@
 import './index.css'
+import {Link} from 'react-router-dom'
 
 const Reference = props => {
   const {movie} = props
-  const {title, posterPath, voteAverage} = movie
+  const {title, posterPath, voteAverage, id} = movie
 
   const imageUrl = `https://image.tmdb.org/t/p/original/${posterPath}`
 
@@ -11,9 +12,11 @@ const Reference = props => {
       <img src={imageUrl} alt="moviePoster" className="image" />
       <p className="text">{title}</p>
       <p className="text">{voteAverage}</p>
-      <button type="button" className="viewbutton">
-        View Details
-      </button>
+      <Link to={`/movie-details/${id}`}>
+        <button type="button" className="viewbutton">
+          View Details
+        </button>
+      </Link>
     </li>
   )
 }

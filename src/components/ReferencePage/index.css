@@ -29,3 +29,13 @@
   color: white;
   margin: 10px;
 }
+
+@media screen and (max-width: 576px) {
+  .movie-item {
+    width: 35%;
+    flex-grow: 1;
+  }
+  .image {
+    width: 100%;
+  }
+}
