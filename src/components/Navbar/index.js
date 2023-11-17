@@ -3,6 +3,7 @@ import {Component} from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {Link} from 'react-router-dom'
 import Popup from 'reactjs-popup'
+
 import {IoIosMenu, IoMdClose} from 'react-icons/io'
 
 class Navbar extends Component {
@@ -58,7 +59,7 @@ class Navbar extends Component {
           type="search"
           className="input"
           value={movieName}
-          placeholder="Search"
+          placeholder="Enter movie name"
           onChange={this.onChangeMovieName}
         />
         <Link to={`/searchMovies/${movieName}`}>
@@ -67,7 +68,7 @@ class Navbar extends Component {
             className="search-button"
             onClick={this.onClickButton}
           >
-            <AiOutlineSearch size={25} />
+            Search
           </button>
         </Link>
       </div>
@@ -75,7 +76,7 @@ class Navbar extends Component {
   }
 
   render() {
-    const {movieName, expand} = this.state
+    const {expand} = this.state
 
     return (
       <div>
@@ -87,7 +88,7 @@ class Navbar extends Component {
             className="search-button small-screen-button"
             onClick={this.onClickButton}
           >
-            <AiOutlineSearch size={25} />
+            Search
           </button>
 
           <div className="small-devices">
@@ -98,17 +99,17 @@ class Navbar extends Component {
           <ul className="routes-container">
             <Link to="/" className="link-component">
               <li>
-                <p>Popular</p>
+                <button type="button">Popular</button>
               </li>
             </Link>
             <Link to="/top-rated" className="link-component">
               <li>
-                <p>Top Rated</p>
+                <button type="button">Top Rated</button>
               </li>
             </Link>
             <Link to="/upcoming" className="link-component">
               <li>
-                <p>Upcoming</p>
+                <button type="button">Upcoming</button>
               </li>
             </Link>
           </ul>

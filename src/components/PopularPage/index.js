@@ -1,12 +1,11 @@
 import './index.css'
-import Loader from 'react-loader-spinner'
 
 import {Component} from 'react'
 import Reference from '../ReferencePage'
 import Navbar from '../Navbar'
 
 class Popular extends Component {
-  state = {movieDetails: '', isLoading: false}
+  state = {movieDetails: ''}
 
   componentDidMount() {
     this.getData()
@@ -30,9 +29,6 @@ class Popular extends Component {
   })
 
   getData = async () => {
-    this.setState({
-      isLoading: true,
-    })
     const apiUrl =
       'https://api.themoviedb.org/3/movie/popular?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&page=1'
     const response = await fetch(apiUrl)
@@ -45,7 +41,6 @@ class Popular extends Component {
       )
       this.setState({
         movieDetails: newData,
-        isLoading: false,
       })
     }
   }
@@ -58,18 +53,10 @@ class Popular extends Component {
     return ''
   }
 
-  renderLoading = () => (
-    <div className="loader-container">
-      <Loader type="ThreeDots" color="blue" />
-    </div>
-  )
-
   renderResult = () => {
-    const {isLoading, movieDetails} = this.state
-    if (isLoading === false) {
-      return this.renderPopularDetails(movieDetails)
-    }
-    return this.renderLoading()
+    const {movieDetails} = this.state
+
+    return this.renderPopularDetails(movieDetails)
   }
 
   render() {
