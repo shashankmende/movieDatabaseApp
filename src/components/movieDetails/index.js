@@ -104,7 +104,7 @@ class MovieDetails extends Component {
     return (
       <div className="movie-details-container">
         <div className="left-container">
-          <img src={imageUrl} className="detailed-image" />
+          <img src={imageUrl} className="detailed-image" alt="movie" />
           <div className="movie-details-text-container">
             <h1>{name}</h1>
             <div className="duration-genre-rating-container">
@@ -127,7 +127,7 @@ class MovieDetails extends Component {
     const imageUrl = `https://image.tmdb.org/t/p/original/${profilePath}`
     return (
       <li className="each-cast">
-        <img src={imageUrl} className="cast-image" />
+        <img src={imageUrl} className="cast-image" alt="cast" />
         <h4>{originalName}</h4>
         <p>{character}</p>
       </li>

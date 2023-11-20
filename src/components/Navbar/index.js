@@ -1,10 +1,8 @@
 import './index.css'
 import {Component} from 'react'
-import {AiOutlineSearch} from 'react-icons/ai'
-import {Link} from 'react-router-dom'
-import Popup from 'reactjs-popup'
 
-import {IoIosMenu, IoMdClose} from 'react-icons/io'
+import {Link} from 'react-router-dom'
+//  import Popup from 'reactjs-popup'
 
 class Navbar extends Component {
   state = {movieName: '', expand: false}
@@ -15,7 +13,7 @@ class Navbar extends Component {
     })
   }
 
-  menu = () => (
+  /*    menu = () => (
     <Popup trigger={<IoIosMenu />} modal position="bottom center">
       {close => (
         <div className="popup-container">
@@ -42,7 +40,7 @@ class Navbar extends Component {
         </div>
       )}
     </Popup>
-  )
+  ) */
 
   onClickButton = () => {
     const {expand} = this.state
@@ -83,18 +81,18 @@ class Navbar extends Component {
         <div className="nav-container">
           <h1 className="title">movieDB</h1>
           <div className="large-screen-search">{this.renderSearchBar()}</div>
-          <button
+          {/*   <button
             type="button"
             className="search-button small-screen-button"
             onClick={this.onClickButton}
           >
             Search
-          </button>
+          </button> */}
 
-          <div className="small-devices">
+          {/* <div className="small-devices">
             {this.menu()}
             <div id="popup-root" className="popup_root" />
-          </div>
+          </div> */}
 
           <ul className="routes-container">
             <Link to="/" className="link-component">
@@ -114,9 +112,9 @@ class Navbar extends Component {
             </Link>
           </ul>
         </div>
-        <div className="mobile-search-bar">
+        {/* <div className="mobile-search-bar">
           {expand ? this.renderSearchBar() : ''}
-        </div>
+        </div>  */}
       </div>
     )
   }
