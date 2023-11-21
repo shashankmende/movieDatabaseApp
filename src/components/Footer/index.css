@@ -1,0 +1,14 @@
+.footer-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #84b3f0;
+}
+
+.prev-button {
+  font-family: 'Roboto';
+  border-radius: 10px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+}
