@@ -99,9 +99,6 @@ class Navbar extends Component {
             </Link>
           </ul>
         </div>
-        {/* <div className="mobile-search-bar">
-          {expand ? this.renderSearchBar() : ''}
-        </div>  */}
       </div>
     )
   }
