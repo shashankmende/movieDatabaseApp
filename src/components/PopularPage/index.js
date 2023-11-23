@@ -45,18 +45,21 @@ class Popular extends Component {
     }
   }
 
-  renderPopularDetails = det => {
+  /*  renderPopularDetails = det => {
     console.log('render popular detials fucntion////////*******', det)
     if (det !== '') {
       return det.map(each => <Reference key={each.id} movie={each} />)
     }
     return ''
-  }
+  } */
 
   renderResult = () => {
     const {movieDetails} = this.state
 
-    return this.renderPopularDetails(movieDetails)
+    if (movieDetails !== '') {
+      return movieDetails.map(each => <Reference key={each.id} movie={each} />)
+    }
+    return ''
   }
 
   render() {

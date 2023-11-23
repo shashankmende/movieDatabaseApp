@@ -32,20 +32,21 @@ class Search extends Component {
     const {match} = this.props
     const {params} = match
     const {movieName} = params
-    if (movieName !== '') {
-      const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&query=${movieName}&page=1`
-      const response = await fetch(apiUrl)
-      const data = await response.json()
+    console.log('movie name from search component', movieName)
 
-      if (response.ok === true) {
-        const {results} = data
-        const newData = results.map(each =>
-          this.convertSnakeCaseToPascalCase(each),
-        )
-        this.setState({
-          searchResults: newData,
-        })
-      }
+    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&query=${movieName}&page=1`
+    const response = await fetch(apiUrl)
+    const data = await response.json()
+    console.log('response from //////', data)
+
+    if (response.ok === true) {
+      const {results} = data
+      const newData = results.map(each =>
+        this.convertSnakeCaseToPascalCase(each),
+      )
+      this.setState({
+        searchResults: newData,
+      })
     }
   }
 

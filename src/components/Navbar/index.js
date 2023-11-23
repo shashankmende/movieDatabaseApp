@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 //  import Popup from 'reactjs-popup'
 
 class Navbar extends Component {
-  state = {movieName: '', expand: false}
+  state = {movieName: ''}
 
   onChangeMovieName = event => {
     this.setState({
@@ -42,13 +42,6 @@ class Navbar extends Component {
     </Popup>
   ) */
 
-  onClickButton = () => {
-    const {expand} = this.state
-    this.setState({
-      expand: !expand,
-    })
-  }
-
   renderSearchBar = () => {
     const {movieName} = this.state
     return (
@@ -61,11 +54,7 @@ class Navbar extends Component {
           onChange={this.onChangeMovieName}
         />
         <Link to={`/searchMovies/${movieName}`}>
-          <button
-            type="button"
-            className="search-button"
-            onClick={this.onClickButton}
-          >
+          <button type="button" className="search-button">
             Search
           </button>
         </Link>
@@ -74,8 +63,6 @@ class Navbar extends Component {
   }
 
   render() {
-    const {expand} = this.state
-
     return (
       <div>
         <div className="nav-container">
