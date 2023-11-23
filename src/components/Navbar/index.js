@@ -76,7 +76,7 @@ class Navbar extends Component {
             Search
           </button> */}
 
-          {/* <div className="small-devices">
+          {/* <div className="small-devicesD">
             {this.menu()}
             <div id="popup-root" className="popup_root" />
           </div> */}
