@@ -3,8 +3,6 @@ import {Component} from 'react'
 
 import {Link, withRouter} from 'react-router-dom'
 
-//  import Popup from 'reactjs-popup'
-
 class Navbar extends Component {
   state = {movieName: ''}
 
