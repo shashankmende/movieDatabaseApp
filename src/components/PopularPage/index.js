@@ -70,7 +70,7 @@ class Popular extends Component {
         <Navbar />
         <div className="popular-container">
           <div className="width-container">
-            <h1 className="popular-heading">Popular</h1>
+            <h3 className="popular-heading">Popular</h3>
             <ul className="movies-container">{this.renderResult()}</ul>
           </div>
         </div>
