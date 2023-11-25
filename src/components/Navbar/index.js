@@ -1,7 +1,8 @@
 import './index.css'
 import {Component} from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
 //  import Popup from 'reactjs-popup'
 
 class Navbar extends Component {
@@ -40,7 +41,7 @@ class Navbar extends Component {
         </div>
       )}
     </Popup>
-  ) */
+  ) 
 
   renderSearchBar = () => {
     const {movieName} = this.state
@@ -60,14 +61,44 @@ class Navbar extends Component {
         </Link>
       </div>
     )
+  } */
+
+  onClickSearchBtn = () => {
+    const {movieName} = this.state
+
+    if (movieName !== '') {
+      const {history} = this.props
+
+      history.push(`/searchMovies/${movieName}`)
+    }
   }
 
   render() {
+    const {movieName} = this.state
     return (
       <div>
         <div className="nav-container">
           <h1 className="title">movieDB</h1>
-          <div className="large-screen-search">{this.renderSearchBar()}</div>
+          <div className="large-screen-search">
+            <div className="search-container">
+              <input
+                type="search"
+                className="input"
+                value={movieName}
+                placeholder="Enter movie name"
+                onChange={this.onChangeMovieName}
+              />
+              {/*   <Link to={`/searchMovies/${movieName}`} */}
+              <button
+                type="button"
+                className="search-button"
+                onClick={this.onClickSearchBtn}
+              >
+                Search
+              </button>
+              {/*   </Link> */}
+            </div>
+          </div>
           {/*   <button
             type="button"
             className="search-button small-screen-button"
@@ -103,4 +134,4 @@ class Navbar extends Component {
     )
   }
 }
-export default Navbar
+export default withRouter(Navbar)
