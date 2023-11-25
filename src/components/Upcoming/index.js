@@ -3,9 +3,10 @@ import './index.css'
 import {Component} from 'react'
 import Reference from '../ReferencePage'
 import Navbar from '../Navbar'
+import Footer from '../Footer'
 
 class TopRated extends Component {
-  state = {movieDetails: ''}
+  state = {movieDetails: '', page: 1}
 
   componentDidMount() {
     this.getData()
@@ -29,8 +30,8 @@ class TopRated extends Component {
   })
 
   getData = async () => {
-    const apiUrl =
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&page=1'
+    const {page} = this.state
+    const apiUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&page=${page}`
     const response = await fetch(apiUrl)
     const data = await response.json()
     console.log('response data=', data)
@@ -58,8 +59,30 @@ class TopRated extends Component {
     return this.renderPopularDetails(movieDetails)
   }
 
+  nextpage = () => {
+    const {page} = this.state
+    this.setState(
+      {
+        page: page + 1,
+      },
+      this.getData,
+    )
+  }
+
+  prevPage = () => {
+    const {page} = this.state
+    if (page > 1) {
+      this.setState(
+        {
+          page: page - 1,
+        },
+        this.getData,
+      )
+    }
+  }
+
   render() {
-    const {movieDetails} = this.state
+    const {movieDetails, page} = this.state
     console.log('movie details*****', movieDetails)
     return (
       <>
@@ -70,6 +93,7 @@ class TopRated extends Component {
             <ul className="movies-container">{this.renderResult()}</ul>
           </div>
         </div>
+        <Footer nextpage={this.nextpage} prevPage={this.prevPage} page={page} />
       </>
     )
   }
