@@ -5,7 +5,7 @@ const Reference = props => {
   const {movie} = props
   const {title, posterPath, voteAverage, id} = movie
 
-  const imageUrl = `https://image.tmdb.org/t/p/original/${posterPath}`
+  const imageUrl = `https://image.tmdb.org/t/p/w500${posterPath}`
 
   return (
     <li className="movie-item">

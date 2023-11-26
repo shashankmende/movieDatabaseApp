@@ -77,26 +77,26 @@ class Navbar extends Component {
       <div>
         <div className="nav-container">
           <h1 className="title">movieDB</h1>
-          <div className="large-screen-search">
-            <div className="search-container">
-              <input
-                type="search"
-                className="input"
-                value={movieName}
-                placeholder="Enter movie name"
-                onChange={this.onChangeMovieName}
-              />
-              {/*   <Link to={`/searchMovies/${movieName}`} */}
-              <button
-                type="button"
-                className="search-button"
-                onClick={this.onClickSearchBtn}
-              >
-                Search
-              </button>
-              {/*   </Link> */}
-            </div>
+
+          <div className="search-container">
+            <input
+              type="search"
+              className="input"
+              value={movieName}
+              placeholder="Enter movie name"
+              onChange={this.onChangeMovieName}
+            />
+            {/*   <Link to={`/searchMovies/${movieName}`} */}
+            <button
+              type="button"
+              className="search-button"
+              onClick={this.onClickSearchBtn}
+            >
+              Search
+            </button>
+            {/*   </Link> */}
           </div>
+
           {/*   <button
             type="button"
             className="search-button small-screen-button"

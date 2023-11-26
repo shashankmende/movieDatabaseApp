@@ -37,7 +37,8 @@ class MovieDetails extends Component {
     if (response.ok === true) {
       const movieData = {
         name: data.original_title,
-        imageUrl: `https://image.tmdb.org/t/p/original/${data.poster_path}`,
+
+        imageUrl: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
         rating: data.vote_average,
         duration: data.runtime,
         genre: data.genres,
