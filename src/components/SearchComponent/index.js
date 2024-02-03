@@ -32,12 +32,10 @@ class Search extends Component {
     const {match} = this.props
     const {params} = match
     const {movieName} = params
-    console.log('movie name from search component', movieName)
 
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=888e953eb74eb6d5e00f9d0a0bc602cd&language=en-US&query=${movieName}&page=1`
     const response = await fetch(apiUrl)
     const data = await response.json()
-    console.log('response from //////', data)
 
     if (response.ok === true) {
       const {results} = data
@@ -53,14 +51,18 @@ class Search extends Component {
   renderSearchResults = () => {
     const {searchResults} = this.state
 
-    console.log('search results=', searchResults)
     if (searchResults !== '') {
       return (
-        <ul className="search-container">
-          {searchResults.map(each => (
-            <Reference movie={each} key={each.id} />
-          ))}
-        </ul>
+        <>
+          <div className="results-home-container">
+            <h1 className="heading">Search Results</h1>
+            <ul className="search-result-container">
+              {searchResults.map(each => (
+                <Reference movie={each} key={each.id} />
+              ))}
+            </ul>
+          </div>
+        </>
       )
     }
     return ''

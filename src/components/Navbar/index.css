@@ -120,13 +120,24 @@ li {
 .link-component {
   text-decoration: none;
   font-family: 'Roboto';
-  font-weight: 400;
-  color: black;
-  font-size: 16px;
+}
+
+.button {
+  border: none;
+  background-color: #3492eb;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+  font-size: 15spx;
+  font-weight: bold;
 }
 
 *:focus {
   outline: none;
+}
+
+* :hover {
+  color: red;
 }
 
 .search-button {

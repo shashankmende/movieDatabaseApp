@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #84b3f0;
+  height: 60px;
 }
 
 .prev-button {
@@ -11,4 +12,11 @@
   height: 40px;
   cursor: pointer;
   outline: none;
+}
+
+.page-number {
+  color: black;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: bold;
 }

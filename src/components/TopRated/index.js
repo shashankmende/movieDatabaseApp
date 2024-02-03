@@ -47,7 +47,6 @@ class TopRated extends Component {
   }
 
   renderPopularDetails = det => {
-    console.log('render popular detials fucntion////////*******', det)
     if (det !== '') {
       return det.map(each => <Reference key={each.id} movie={each} />)
     }

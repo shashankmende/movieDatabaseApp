@@ -7,7 +7,6 @@ import Upcoming from './components/Upcoming'
 import MovieDetails from './components/movieDetails'
 import Search from './components/SearchComponent'
 
-// write your code here
 const App = () => (
   <>
     <Switch>

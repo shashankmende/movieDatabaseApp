@@ -12,55 +12,6 @@ class Navbar extends Component {
     })
   }
 
-  /*    menu = () => (
-    <Popup trigger={<IoIosMenu />} modal position="bottom center">
-      {close => (
-        <div className="popup-container">
-          <button type="button" className="close" onClick={close}>
-            <IoMdClose />
-          </button>
-          <ul className="min-devices">
-            <Link to="/" className="link-component">
-              <li>
-                <p>Popular</p>
-              </li>
-            </Link>
-            <Link to="/top-rated" className="link-component">
-              <li>
-                <p>Top Rated</p>
-              </li>
-            </Link>
-            <Link to="/upcoming" className="link-component">
-              <li>
-                <p>Upcoming</p>
-              </li>
-            </Link>
-          </ul>
-        </div>
-      )}
-    </Popup>
-  ) 
-
-  renderSearchBar = () => {
-    const {movieName} = this.state
-    return (
-      <div className="search-container">
-        <input
-          type="search"
-          className="input"
-          value={movieName}
-          placeholder="Enter movie name"
-          onChange={this.onChangeMovieName}
-        />
-        <Link to={`/searchMovies/${movieName}`}>
-          <button type="button" className="search-button">
-            Search
-          </button>
-        </Link>
-      </div>
-    )
-  } */
-
   onClickSearchBtn = () => {
     const {movieName} = this.state
 
@@ -86,7 +37,7 @@ class Navbar extends Component {
               placeholder="Enter movie name"
               onChange={this.onChangeMovieName}
             />
-            {/*   <Link to={`/searchMovies/${movieName}`} */}
+
             <button
               type="button"
               className="search-button"
@@ -94,36 +45,29 @@ class Navbar extends Component {
             >
               Search
             </button>
-            {/*   </Link> */}
           </div>
-
-          {/*   <button
-            type="button"
-            className="search-button small-screen-button"
-            onClick={this.onClickButton}
-          >
-            Search
-          </button> */}
-
-          {/* <div className="small-devicesD">
-            {this.menu()}
-            <div id="popup-root" className="popup_root" />
-          </div> */}
 
           <ul className="routes-container">
             <Link to="/" className="link-component">
               <li>
-                <button type="button">Popular</button>
+                <button type="button" className="button">
+                  Popular
+                </button>
               </li>
             </Link>
             <Link to="/top-rated" className="link-component">
               <li>
-                <button type="button">Top Rated</button>
+                <button type="button" className="button">
+                  Top Rated
+                </button>
               </li>
             </Link>
             <Link to="/upcoming" className="link-component">
               <li>
-                <button type="button">Upcoming</button>
+                <button type="button" className="button">
+                  {' '}
+                  Upcoming
+                </button>
               </li>
             </Link>
           </ul>

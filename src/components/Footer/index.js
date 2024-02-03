@@ -16,7 +16,7 @@ const Footer = props => {
       <button type="button" className="prev-button" onClick={onClickPrev}>
         Prev
       </button>
-      <p>{page}</p>
+      <p className="page-number">{page}</p>
       <button type="button" className="prev-button" onClick={onClickNext}>
         Next
       </button>
